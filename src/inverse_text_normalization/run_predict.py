@@ -50,6 +50,7 @@ def inverse_normalize_text(text_list, lang):
         itn_results_formatted = [format_numbers_with_commas(sent=sent, lang=lang) for sent in itn_results]
         return itn_results_formatted
     elif lang in ['en', 'en_bio']:
+        text_list = [text.lower() for text in text_list]
         itn_results = en_itn(text_list)
         keywords_for_en_format = ["million", "billion", "trillion", "quadrillion", "quintillion", "sextillion"]
         itn_results_formatted = []
